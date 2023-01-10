@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/app/sign-in.dart';
 import 'package:myapp/utils.dart';
 
-class Land extends StatelessWidget {
-  const Land({super.key});
+class LandingPage extends StatelessWidget {
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,11 @@ class Land extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: SizedBox(
-        // landingpagec7B (1:483)
         width: double.infinity,
         height: 800*fem,
         child: Stack(
           children: [
             Positioned(
-              // backgroundtD7 (1:485)
               left: 0*fem,
               top: 0*fem,
               child: Container(
@@ -35,7 +33,6 @@ class Land extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  // rectangle3Jnd (1:487)
                   child: SizedBox(
                     width: double.infinity,
                     height: 800*fem,
@@ -49,51 +46,47 @@ class Land extends StatelessWidget {
               ),
             ),
             Positioned(
-              // frame101S9 (104:166)
               left: 281*fem,
               top: 688*fem,
               child: Align(
                 child: SizedBox(
                   width: 52*fem,
-                  height: 52*fem,
+                  height: 62*fem,
                   child: TextButton(
-                    onPressed: () async {
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Signin())
+                    onPressed: () async{
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Signin()
+                        )
                       );
                     },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
-                    child: Image.asset(
-                      'assets/app/images/frame-10.png',
-                      width: 52*fem,
-                      height: 52*fem,
+                    child: Icon(Icons.arrow_circle_right_sharp,
+                      size: 62*fem,
+
                     ),
                   ),
                 ),
               ),
             ),
             Positioned(
-              // frame2HPf (1:492)
               left: 27*fem,
               top: 136*fem,
-              child: SizedBox(
+              child: Container(
                 width: 206*fem,
                 height: 116*fem,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      // group6zJ5 (1:496)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 19*fem),
                       width: 142*fem,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            // welcometouA9 (1:497)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
                             width: double.infinity,
                             child: Text(
@@ -110,7 +103,6 @@ class Land extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            // mydayPzR (1:498)
                             'MyDay',
                             style: SafeGoogleFont (
                               'Poppins',
@@ -125,7 +117,6 @@ class Land extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // wannarecordyourdayyouvechosent (1:495)
                       constraints: BoxConstraints (
                         maxWidth: 206*fem,
                       ),
@@ -147,6 +138,6 @@ class Land extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
