@@ -15,9 +15,11 @@ class Signin extends StatelessWidget {
 //----------------------------------------------------------------------
     return Scaffold(
       resizeToAvoidBottomInset: false,
-        body: SizedBox(
-      width: double.infinity,
-      child: SizedBox(
+        body: ListView(
+
+      children: [
+        SingleChildScrollView(
+        child: SizedBox(
         // signiniUH (1:499)
         width: double.infinity,
         height: 800 * fem,
@@ -89,10 +91,10 @@ class Signin extends StatelessWidget {
                             Positioned(
                               // group3PMT (1:508)
                               left: 14 * fem,
-                              top: 195 * fem,
+                              top: 200 * fem,
                               child: Container(
                                 width: 244 * fem,
-                                height: 111 * fem,
+                                height: 121 * fem,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(4 * fem),
                                 ),
@@ -103,7 +105,7 @@ class Signin extends StatelessWidget {
                                       Container(
                                         // autogroup254mh7F (CJBQazqoEkqGB5DUAA254m)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
-                                            0 * fem, 1 * fem, 27 * fem),
+                                            0 * fem, 1 * fem, 15 * fem),
                                         width: 243 * fem,
                                         decoration: BoxDecoration(
                                           color: const Color(0xffffffff),
@@ -145,7 +147,7 @@ class Signin extends StatelessWidget {
                                       Container(
                                         // autogroupsp2mSDF (CJBQgaWqFW3zvjYq1cSp2M)
                                         margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 1 * fem, 8 * fem),
+                                            0 * fem, 0 * fem, 1 * fem, 3 * fem),
                                         width: 243 * fem,
                                         decoration: BoxDecoration(
                                           color: const Color(0xffffffff),
@@ -185,14 +187,23 @@ class Signin extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      const TextField(
-                                        maxLines: null,
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          focusedBorder: InputBorder.none,
-                                          enabledBorder: InputBorder.none,
-                                          errorBorder: InputBorder.none,
-                                          disabledBorder: InputBorder.none,
+                                      TextButton(
+                                        // forgetpasswordHi2 (1:509)
+                                        onPressed:  () {},
+                                        style:  TextButton.styleFrom (
+                                          padding:  EdgeInsets.zero,
+                                        ),
+                                        child:
+                                        Text(
+                                          'Forgot password ?',
+                                          style:  SafeGoogleFont (
+                                            'Poppins',
+                                            fontSize:  13*ffem,
+                                            fontWeight:  FontWeight.w500,
+                                            height:  1.5*ffem/fem,
+                                            fontStyle:  FontStyle.italic,
+                                            color:  const Color(0xff0075ff),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -205,12 +216,13 @@ class Signin extends StatelessWidget {
                       ),
 
                       //-------------------------------------------------------------
-                      Container(
-                        // autogrouplke1mPw (CJBQqf63BX7QbjatdvLKE1)
-                        padding: EdgeInsets.fromLTRB(
-                            12 * fem, 16 * fem, 3 * fem, 0 * fem),
-                        width: double.infinity,
-                        child: Column(
+                      Expanded(
+                        child: ListView(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.fromLTRB(12 * fem, 16 * fem, 3 * fem, 0 * fem),
+                              width: double.infinity,
+                              child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
@@ -245,32 +257,37 @@ class Signin extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            // Container(
-                            //   // orhgu (1:507)
-                            //   margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 0*fem),
-                            //   child: const TextField(
-                            //     decoration: InputDecoration (
-                            //       border: InputBorder.none,
-                            //       focusedBorder: InputBorder.none,
-                            //       enabledBorder: InputBorder.none,
-                            //       errorBorder: InputBorder.none,
-                            //       disabledBorder: InputBorder.none,
-                            //     ),
-                            //   ),
-                            // ),
+                            Container(
+                              // orbcE (1:507)
+                              margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 0*fem),
+                              child:
+                              Text(
+                                'Or',
+                                style:  SafeGoogleFont (
+                                  'Poppins',
+                                  fontSize:  18*ffem,
+                                  fontWeight:  FontWeight.w700,
+                                  height:  1.5*ffem/fem,
+                                  color:  Color(0xffffffff),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
                 ),
+                  ]
+                )
+              ),
               ),
 
               //-----------------------------------------------------------------------
               Positioned(
                 // component2D9T (1:516)
                 left: 65 * fem,
-                top: 553 * fem,
+                top: 563 * fem,
                 child: TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
@@ -298,10 +315,15 @@ class Signin extends StatelessWidget {
                   ),
                 ),
               ),
+
             ],
           ),
         ),
       ),
-    ));
+        )
+      ]
+
+    )
+    );
   }
 }
