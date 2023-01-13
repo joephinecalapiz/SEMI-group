@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/app/forgot-pass.dart';
 import 'package:myapp/utils.dart';
 
 class Signin extends StatelessWidget {
@@ -189,7 +190,14 @@ class Signin extends StatelessWidget {
                                                     ),
                                                     TextButton(
                                                       // forgetpasswordHi2 (1:509)
-                                                      onPressed:  () {},
+                                                      onPressed:  () async{
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(builder: (context) => const ForgotPass()
+                                                            )
+                                                        );
+
+                                                      },
                                                       style:  TextButton.styleFrom (
                                                         padding:  EdgeInsets.zero,
                                                       ),

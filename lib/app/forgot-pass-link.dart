@@ -4,13 +4,18 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({super.key});
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return Scaffold(
+        body: ListView(
+      children: [
+        Container(
       width: double.infinity,
       child: Container(
         // forgotpasslinkpMw (1:780)
@@ -200,7 +205,7 @@ class Scene extends StatelessWidget {
                                 fontSize: 16*ffem,
                                 fontWeight: FontWeight.w500,
                                 height: 1.5*ffem/fem,
-                                color: Color(0xffffffff),
+                                color: const Color(0xffffffff),
                               ),
                             ),
                           ),
@@ -214,6 +219,10 @@ class Scene extends StatelessWidget {
           ),
         ),
       ),
+        )
+          ]
+        )
+
           );
   }
 }

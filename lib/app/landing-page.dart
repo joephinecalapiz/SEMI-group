@@ -65,8 +65,8 @@ class LandingPage extends StatelessWidget {
                     ),
                     child: Icon(Icons.arrow_circle_right_sharp,
                       size: 62*fem,
-
                     ),
+
                   ),
                 ),
               ),
@@ -74,7 +74,7 @@ class LandingPage extends StatelessWidget {
             Positioned(
               left: 27*fem,
               top: 136*fem,
-              child: Container(
+              child: SizedBox(
                 width: 206*fem,
                 height: 116*fem,
                 child: Column(

@@ -31,6 +31,7 @@ TextStyle SafeGoogleFont(
   Color? decorationColor,
   TextDecorationStyle? decorationStyle,
   double? decorationThickness,
+
 }) {
   try {
     return GoogleFonts.getFont(
@@ -55,6 +56,7 @@ TextStyle SafeGoogleFont(
       decorationStyle: decorationStyle,
       decorationThickness: decorationThickness,
     );
+
   } catch (ex) {
     return GoogleFonts.getFont(
       "Source Sans Pro",
