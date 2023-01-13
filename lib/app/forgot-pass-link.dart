@@ -136,6 +136,7 @@ class ForgotPassword extends StatelessWidget {
                                                     child: Container(
                                                       margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 1*fem, 0*fem),
                                                       width: double.infinity,
+                                                      height: double.infinity,
                                                       decoration: BoxDecoration (
                                                         color: const Color(0xffffffff),
                                                         borderRadius: BorderRadius.circular(4*fem),
