@@ -12,18 +12,19 @@ class Signup extends StatelessWidget {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
-      width: double.infinity,
-      child: Container(
+
+    return Scaffold(
+      body: SingleChildScrollView(
+           child:SizedBox(
         // signuppuF (1:798)
         width: double.infinity,
         height: 800*fem,
-        child: Container(
+          child: Container(
           // backgroundmZb (1:799)
           padding: EdgeInsets.fromLTRB(12*fem, 20*fem, 12*fem, 104*fem),
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration (
+          decoration: const BoxDecoration (
             color: Color(0x3f000000),
             image: DecorationImage (
               fit: BoxFit.cover,
@@ -247,6 +248,7 @@ class Signup extends StatelessWidget {
                               ),
                             ),
                           ),
+
                           Container(
                             // conpasswordk1X (1:809)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 8*fem),
@@ -283,24 +285,28 @@ class Signup extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            // alreadyhaveanaccountYxy (1:821)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 3*fem, 0*fem),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom (
-                                padding: EdgeInsets.zero,
+
+
+                           Container(
+                            // alreadyhaveanaccount81p (1:821)
+                            margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 3*fem, 0*fem),
+                            child:
+                            TextButton(
+                              onPressed:  () {},
+                              style:  TextButton.styleFrom (
+                                padding:  EdgeInsets.zero,
                               ),
-                              child: Container(
-                                child: TextField(
-                                  maxLines: null,
-                                  decoration: InputDecoration (
-                                    border: InputBorder.none,
-                                    focusedBorder: InputBorder.none,
-                                    enabledBorder: InputBorder.none,
-                                    errorBorder: InputBorder.none,
-                                    disabledBorder: InputBorder.none,
-                                  ),
+                              child:
+                              Text(
+                                'Already have an account?',
+                                textAlign:  TextAlign.right,
+                                style:  SafeGoogleFont (
+                                  'Poppins',
+                                  fontSize:  10*ffem,
+                                  fontWeight:  FontWeight.w500,
+                                  height:  1.5*ffem/fem,
+                                  fontStyle:  FontStyle.italic,
+                                  color:  Color(0xff0075ff),
                                 ),
                               ),
                             ),
@@ -314,7 +320,8 @@ class Signup extends StatelessWidget {
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
-                      child: Container(
+
+                        child: Container(
                         width: double.infinity,
                         height: 36*fem,
                         decoration: BoxDecoration (
@@ -335,6 +342,7 @@ class Signup extends StatelessWidget {
                         ),
                       ),
                     ),
+
                   ],
                 ),
               ),
@@ -342,6 +350,11 @@ class Signup extends StatelessWidget {
           ),
         ),
       ),
+          )
+
+
+
+
           );
   }
 }

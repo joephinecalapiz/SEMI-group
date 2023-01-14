@@ -3,16 +3,21 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/app/forgot-pass.dart';
+import 'package:myapp/app/my-day-list.dart';
+import 'package:myapp/app/my-profile.dart';
+import 'package:myapp/app/sign-up.dart';
 import 'package:myapp/utils.dart';
 
 class Signin extends StatelessWidget {
-  const Signin({super.key});
-
+  Signin({super.key});
+  final _formKey = GlobalKey<FormState>();
+  final _name = TextEditingController();
+  bool _validate = false;
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
+    double size = MediaQuery.of(context).size.width / baseWidth;
+    double sizes = size * 0.97;
 //----------------------------------------------------------------------
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -23,7 +28,7 @@ class Signin extends StatelessWidget {
                 child: SizedBox(
                   // signiniUH (1:499)
                   width: double.infinity,
-                  height: 800 * fem,
+                  height: 800 * size,
                   child: Container(
                     // backgroundUCZ (1:500)
                     width: double.infinity,
@@ -42,15 +47,15 @@ class Signin extends StatelessWidget {
                       children: [
                         Positioned(
                           // rectangle1kvm (1:503)
-                          left: 30 * fem,
-                          top: 146 * fem,
+                          left: 30 * size,
+                          top: 146 * size,
                           child: Align(
                             child: SizedBox(
-                              width: 300 * fem,
-                              height: 507 * fem,
+                              width: 300 * size,
+                              height: 507 * size,
                               child: Container(
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(5 * fem),
+                                  borderRadius: BorderRadius.circular(5 * size),
                                   color: const Color(0x66ffffff),
                                 ),
                               ),
@@ -60,28 +65,28 @@ class Signin extends StatelessWidget {
 //-----------------------------------------------------------------------
                         Positioned(
                           // frame2pvd (1:505)
-                          left: 51 * fem,
-                          top: 151 * fem,
+                          left: 51 * size,
+                          top: 151 * size,
                           child: Container(
-                              width: 259 * fem,
-                              height: 393 * fem,
+                              width: 259 * size,
+                              height: 393 * size,
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
                                       // autogroupsd2zjnh (CJBQN63eFdUTD5hQ4pSD2Z)
                                       width: double.infinity,
-                                      height: 306 * fem,
+                                      height: 306 * size,
                                       child: Stack(
                                         children: [
                                           Positioned(
                                             // pitnav1fwF (1:506)
-                                            left: 0 * fem,
-                                            top: 0 * fem,
+                                            left: 0 * size,
+                                            top: 0 * size,
                                             child: Align(
                                               child: SizedBox(
-                                                width: 259 * fem,
-                                                height: 264 * fem,
+                                                width: 259 * size,
+                                                height: 264 * size,
                                                 child: Image.asset(
                                                   'assets/app/images/pitnav-1-sZj.png',
                                                   fit: BoxFit.cover,
@@ -91,13 +96,13 @@ class Signin extends StatelessWidget {
                                           ),
                                           Positioned(
                                             // group3PMT (1:508)
-                                            left: 14 * fem,
-                                            top: 200 * fem,
+                                            left: 14 * size,
+                                            top: 200 * size,
                                             child: Container(
-                                              width: 244 * fem,
-                                              height: 121 * fem,
+                                              width: 244 * size,
+                                              height: 121 * size,
                                               decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(4 * fem),
+                                                borderRadius: BorderRadius.circular(4 * size),
                                               ),
                                               child: SingleChildScrollView(
                                                 child: Column(
@@ -105,60 +110,72 @@ class Signin extends StatelessWidget {
                                                   children: <Widget>[
                                                     Container(
                                                       // autogroup254mh7F (CJBQazqoEkqGB5DUAA254m)
-                                                      margin: EdgeInsets.fromLTRB(0 * fem,
-                                                          0 * fem, 1 * fem, 15 * fem),
-                                                      width: 243 * fem,
-                                                      decoration: BoxDecoration(
-                                                        color: const Color(0xffffffff),
-                                                        borderRadius:
-                                                        BorderRadius.circular(4 * fem),
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: const Color(0x3f000000),
-                                                            offset: Offset(0 * fem, 0 * fem),
-                                                            blurRadius: 1 * fem,
+                                                        margin: EdgeInsets.fromLTRB(0 * size,
+                                                            0 * size, 1 * size, 15 * size),
+                                                        width: 243 * size,
+                                                        decoration: BoxDecoration(
+                                                          color: const Color(0xffffffff),
+                                                          borderRadius:
+                                                          BorderRadius.circular(4 * size),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: const Color(0x3f000000),
+                                                              offset: Offset(0 * size, 0 * size),
+                                                              blurRadius: 1 * size,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        child: Form(
+                                                          key: _formKey,
+                                                          autovalidateMode: AutovalidateMode.onUserInteraction,
+
+                                                          child: TextFormField(
+                                                            controller: _name,
+                                                            keyboardType: TextInputType.emailAddress,
+                                                            decoration: InputDecoration(
+                                                              border: InputBorder.none,
+                                                              focusedBorder: InputBorder.none,
+                                                              enabledBorder: InputBorder.none,
+                                                              errorBorder: InputBorder.none,
+                                                              disabledBorder: InputBorder.none,
+                                                              contentPadding: EdgeInsets.fromLTRB(
+                                                                  9 * size,
+                                                                  6.5 * size,
+                                                                  9 * size,
+                                                                  6.5 * size),
+                                                              hintText: 'Email',
+                                                              errorText: _validate ? 'Email' : null,
+                                                              hintStyle: const TextStyle(
+                                                                  color: Color(0xff0075ff)),
+                                                            ),
+                                                            validator: (value) {
+                                                              return (value == '') ? 'Enter Email' : null;
+                                                            },
+
+                                                            style: SafeGoogleFont(
+                                                              'Poppins',
+                                                              fontSize: 12 * sizes,
+                                                              fontWeight: FontWeight.w400,
+                                                              height: 1.5 * sizes / size,
+                                                              color: const Color(0xff000000),
+                                                            ),
                                                           ),
-                                                        ],
-                                                      ),
-                                                      child: TextField(
-                                                        decoration: InputDecoration(
-                                                          border: InputBorder.none,
-                                                          focusedBorder: InputBorder.none,
-                                                          enabledBorder: InputBorder.none,
-                                                          errorBorder: InputBorder.none,
-                                                          disabledBorder: InputBorder.none,
-                                                          contentPadding: EdgeInsets.fromLTRB(
-                                                              9 * fem,
-                                                              6.5 * fem,
-                                                              9 * fem,
-                                                              6.5 * fem),
-                                                          hintText: 'Email',
-                                                          hintStyle: const TextStyle(
-                                                              color: Color(0xff0075ff)),
-                                                        ),
-                                                        style: SafeGoogleFont(
-                                                          'Poppins',
-                                                          fontSize: 12 * ffem,
-                                                          fontWeight: FontWeight.w400,
-                                                          height: 1.5 * ffem / fem,
-                                                          color: const Color(0xff000000),
-                                                        ),
-                                                      ),
+                                                        )
                                                     ),
                                                     Container(
                                                       // autogroupsp2mSDF (CJBQgaWqFW3zvjYq1cSp2M)
                                                       margin: EdgeInsets.fromLTRB(
-                                                          0 * fem, 0 * fem, 1 * fem, 3 * fem),
-                                                      width: 243 * fem,
+                                                          0 * size, 0 * size, 1 * size, 3 * size),
+                                                      width: 243 * size,
                                                       decoration: BoxDecoration(
                                                         color: const Color(0xffffffff),
                                                         borderRadius:
-                                                        BorderRadius.circular(4 * fem),
+                                                        BorderRadius.circular(4 * size),
                                                         boxShadow: [
                                                           BoxShadow(
                                                             color: const Color(0x3f000000),
-                                                            offset: Offset(0 * fem, 0 * fem),
-                                                            blurRadius: 1 * fem,
+                                                            offset: Offset(0 * size, 0 * size),
+                                                            blurRadius: 1 * size,
                                                           ),
                                                         ],
                                                       ),
@@ -171,19 +188,19 @@ class Signin extends StatelessWidget {
                                                           errorBorder: InputBorder.none,
                                                           disabledBorder: InputBorder.none,
                                                           contentPadding: EdgeInsets.fromLTRB(
-                                                              9 * fem,
-                                                              6 * fem,
-                                                              9 * fem,
-                                                              6 * fem),
+                                                              9 * size,
+                                                              6 * size,
+                                                              9 * size,
+                                                              6 * size),
                                                           hintText: 'Password',
                                                           hintStyle: const TextStyle(
                                                               color: Color(0xff0075ff)),
                                                         ),
                                                         style: SafeGoogleFont(
                                                           'Poppins',
-                                                          fontSize: 12 * ffem,
+                                                          fontSize: 12 * sizes,
                                                           fontWeight: FontWeight.w400,
-                                                          height: 1.5 * ffem / fem,
+                                                          height: 1.5 * sizes / size,
                                                           color: const Color(0xff000000),
                                                         ),
                                                       ),
@@ -206,9 +223,9 @@ class Signin extends StatelessWidget {
                                                         'Forgot password ?',
                                                         style:  SafeGoogleFont (
                                                           'Poppins',
-                                                          fontSize:  13*ffem,
+                                                          fontSize:  13*sizes,
                                                           fontWeight:  FontWeight.w500,
-                                                          height:  1.5*ffem/fem,
+                                                          height:  1.5*sizes/size,
                                                           fontStyle:  FontStyle.italic,
                                                           color:  const Color(0xff0075ff),
                                                         ),
@@ -228,7 +245,7 @@ class Signin extends StatelessWidget {
                                       child: ListView(
                                         children: [
                                           Container(
-                                            padding: EdgeInsets.fromLTRB(12 * fem, 16 * fem, 3 * fem, 0 * fem),
+                                            padding: EdgeInsets.fromLTRB(12 * size, 16 * size, 3 * size, 0 * size),
                                             width: double.infinity,
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -236,7 +253,7 @@ class Signin extends StatelessWidget {
                                                 Container(
                                                   // component16SD (1:515)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 0 * fem, 11 * fem),
+                                                      0 * size, 0 * size, 0 * size, 11 * size),
                                                   child: TextButton(
                                                     onPressed: () {},
                                                     style: TextButton.styleFrom(
@@ -244,20 +261,27 @@ class Signin extends StatelessWidget {
                                                     ),
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 36 * fem,
+                                                      height: 36 * size,
                                                       decoration: BoxDecoration(
                                                         color: const Color(0xff0075ff),
                                                         borderRadius:
-                                                        BorderRadius.circular(25 * fem),
+                                                        BorderRadius.circular(25 * size),
                                                       ),
-                                                      child: Center(
+                                                      child: ElevatedButton(
+                                                        onPressed: () {
+                                                          Navigator.push(context,
+                                                              MaterialPageRoute(builder: (context) => DayList()
+                                                              )
+                                                          );
+
+                                                        },
                                                         child: Text(
                                                           'Login',
                                                           style: SafeGoogleFont(
                                                             'Poppins',
-                                                            fontSize: 16 * ffem,
+                                                            fontSize: 16 * sizes,
                                                             fontWeight: FontWeight.w500,
-                                                            height: 1.5 * ffem / fem,
+                                                            height: 1.5 * sizes / size,
                                                             color: const Color(0xffffffff),
                                                           ),
                                                         ),
@@ -267,15 +291,15 @@ class Signin extends StatelessWidget {
                                                 ),
                                                 Container(
                                                   // orbcE (1:507)
-                                                  margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 0*fem),
+                                                  margin:  EdgeInsets.fromLTRB(0*size, 0*size, 1*size, 0*size),
                                                   child:
                                                   Text(
                                                     'Or',
                                                     style:  SafeGoogleFont (
                                                       'Poppins',
-                                                      fontSize:  18*ffem,
+                                                      fontSize:  18*sizes,
                                                       fontWeight:  FontWeight.w700,
-                                                      height:  1.5*ffem/fem,
+                                                      height:  1.5*sizes/size,
                                                       color:  Color(0xffffffff),
                                                     ),
                                                   ),
@@ -294,28 +318,34 @@ class Signin extends StatelessWidget {
                         //-----------------------------------------------------------------------
                         Positioned(
                           // component2D9T (1:516)
-                          left: 65 * fem,
-                          top: 563 * fem,
+                          left: 65 * size,
+                          top: 563 * size,
                           child: TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
                             child: Container(
-                              width: 244 * fem,
-                              height: 36 * fem,
+                              width: 244 * size,
+                              height: 36 * size,
                               decoration: BoxDecoration(
                                 color: const Color(0xff0075ff),
-                                borderRadius: BorderRadius.circular(25 * fem),
+                                borderRadius: BorderRadius.circular(25 * size),
                               ),
-                              child: Center(
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => Signup()
+                                      )
+                                  );
+                                },
                                 child: Text(
                                   'Create Account',
                                   style: SafeGoogleFont(
                                     'Poppins',
-                                    fontSize: 16 * ffem,
+                                    fontSize: 16 * sizes,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.5 * ffem / fem,
+                                    height: 1.5 * sizes / size,
                                     color: const Color(0xffffffff),
                                   ),
                                 ),
