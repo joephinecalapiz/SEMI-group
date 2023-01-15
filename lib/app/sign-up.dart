@@ -148,10 +148,10 @@ class Signup extends StatelessWidget {
                             width: double.infinity,
                             decoration: BoxDecoration (
                               borderRadius: BorderRadius.circular(4*fem),
-                              color: Color(0xffffffff),
+                              color: const Color(0xffffffff),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Color(0x3f000000),
+                                  color: const Color(0x3f000000),
                                   offset: Offset(0*fem, 0*fem),
                                   blurRadius: 1*fem,
                                 ),
@@ -257,7 +257,9 @@ class Signup extends StatelessWidget {
                             margin:  EdgeInsets.fromLTRB(0*fem, 0*fem, 3*fem, 0*fem),
                             child:
                             TextButton(
-                              onPressed:  () {},
+                              onPressed:  () {
+                                Navigator.pop(context);
+                              },
                               style:  TextButton.styleFrom (
                                 padding:  EdgeInsets.zero,
                               ),
