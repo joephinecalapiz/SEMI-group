@@ -58,10 +58,10 @@ class Signup extends StatelessWidget {
               Container(
                 // autogrouplvguJhw (CJBRCyoqpzcAVRaQyDLVGu)
                 margin: EdgeInsets.fromLTRB(18*fem, 0*fem, 18*fem, 0*fem),
-                padding: EdgeInsets.fromLTRB(28*fem, 17*fem, 28*fem, 40*fem),
+                padding: EdgeInsets.fromLTRB(28*fem, 17*fem, 28*fem, 10*fem),
                 width: double.infinity,
                 decoration: BoxDecoration (
-                  color: Color(0x66ffffff),
+                  color: const Color(0x66ffffff),
                   borderRadius: BorderRadius.circular(5*fem),
                 ),
                 child: Column(
@@ -178,41 +178,6 @@ class Signup extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // phone5nZ (1:812)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 22*fem),
-                            width: double.infinity,
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular(4*fem),
-                              color: Color(0xffffffff),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x3f000000),
-                                  offset: Offset(0*fem, 0*fem),
-                                  blurRadius: 1*fem,
-                                ),
-                              ],
-                            ),
-                            child: TextField(
-                              decoration: InputDecoration (
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                contentPadding: EdgeInsets.fromLTRB(9*fem, 6*fem, 9*fem, 6*fem),
-                                hintText: 'Phone Number',
-                                hintStyle: TextStyle(color:Color(0xff0075ff)),
-                              ),
-                              style: SafeGoogleFont (
-                                'Poppins',
-                                fontSize: 12*ffem,
-                                fontWeight: FontWeight.w400,
-                                height: 1.5*ffem/fem,
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                          Container(
                             // passwordWN5 (1:806)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 22*fem),
                             width: double.infinity,
@@ -311,37 +276,41 @@ class Signup extends StatelessWidget {
                               ),
                             ),
                           ),
+                          const SizedBox(height: 5),
+                          TextButton(
+                            // component1nK4 (1:803)
+                            onPressed:  () {},
+                            style:  TextButton.styleFrom (
+                              padding:  EdgeInsets.zero,
+                            ),
+                            child:
+                            Container(
+                              width:  double.infinity,
+                              height:  35*fem,
+                              decoration:  BoxDecoration (
+                                color:  Color(0xff0075ff),
+                                borderRadius:  BorderRadius.circular(20*fem),
+                              ),
+                              child:
+                              Center(
+                                child:
+                                Text(
+                                  'Register',
+                                  style:  SafeGoogleFont (
+                                    'Poppins',
+                                    fontSize:  16*ffem,
+                                    fontWeight:  FontWeight.w500,
+                                    height:  1.5*ffem/fem,
+                                    color:  Color(0xffffffff),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                    TextButton(
-                      // component1djX (1:803)
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
 
-                        child: Container(
-                        width: double.infinity,
-                        height: 36*fem,
-                        decoration: BoxDecoration (
-                          color: Color(0xff0075ff),
-                          borderRadius: BorderRadius.circular(25*fem),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Register',
-                            style: SafeGoogleFont (
-                              'Poppins',
-                              fontSize: 16*ffem,
-                              fontWeight: FontWeight.w500,
-                              height: 1.5*ffem/fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
 
                   ],
                 ),
